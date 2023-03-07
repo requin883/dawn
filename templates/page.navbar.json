@@ -10,6 +10,7 @@
     "navbar": {
       "type": "nav-bar",
       "settings": {
+        "menu": "navbar-menu"
       }
     }
   },
