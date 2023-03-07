@@ -1,5 +1,8 @@
 <div class="grid place-items-start dropdown-container">
-    <span>{{ 'icon-hamburger.liquid' | asset_url }}</span>
+    <span>
+    {% render 'icon-hamburger' %}
+    {% render 'icon-close' %}
+    </span>
   {% for link in section.settings.menu.links %}
     <details class="mt-[1rem] hidden {% if forloop.index == 3 %}mb-[1rem]{% endif %}">
       <summary>{{ link.title }}</summary>
