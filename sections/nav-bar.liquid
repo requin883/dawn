@@ -6,9 +6,6 @@
   {% for link in section.settings.menu.links %}
     <details class="mt-[1rem] {% if forloop.index == 3 %}mb-[1rem]{% endif %}">
       <summary>{{ link.title }}
-      <span class="align-self-end w-[5%]">
-    {% render 'icon-close' %}
-    </span>
     </summary>
       {% for childlink in link.links %}
         <details class="childlink-container">
@@ -22,7 +19,7 @@
       {% endfor %}
     </details>
   {% endfor %}
-      <span class="ml-[1rem] w-[5%]">
+    <span class="ml-[1rem] w-[5%]">
     {% render 'icon-close' %}
     </span>
   </div>
