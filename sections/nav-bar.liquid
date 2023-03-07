@@ -2,7 +2,7 @@
   <span class="ml-[1rem] w-[5%]">
     {% render 'icon-hamburger' %}
     </span>
-  <div class="grid grid-flow-col place-content-between">
+  <div class="grid grid-flow-col">
     <div class="grid grid-flow-row">
   {% for link in section.settings.menu.links %}
     <details class="mt-[1rem] {% if forloop.index == 3 %}mb-[1rem]{% endif %}">
@@ -21,7 +21,7 @@
     </details>
   {% endfor %}
   </div>
-    <span class="ml-[1rem] w-[5%]">
+    <span class="w-[5%]">
     {% render 'icon-close' %}
     </span>
   </div>
