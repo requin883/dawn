@@ -1,7 +1,7 @@
 {
   "sections": {
     "main": {
-      "type": "navbar_menu",
+      "type": "nav-bar",
       "settings": {
         "padding_top": 36,
         "padding_bottom": 36
