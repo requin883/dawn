@@ -1,6 +1,6 @@
 <div class="grid place-items-start">
   {% for link in section.settings.menu.links %}
-    <details>
+    <details class="dropdown-container">
       <summary>{{ link.title }}</summary>
       {% for childlink in link.links %}
         <details class="childlink-container">
