@@ -3,11 +3,11 @@
     <details>
       <summary>{{ link.title }}</summary>
       {% for childlink in link.links %}
-        <details>
+        <details class="childlink-container">
           <summary>{{ childlink.title }}</summary>
-          <ul>
-            {% for evenchildishlink in childlink.links %}
-              <li>{{ evenchildishlink.title }}</li>
+          <ul class="grandchildcontainer-container">
+            {% for grandchildlink in childlink.links %}
+              <li>{{ grandchildlink.title }}</li>
             {% endfor %}
           </ul>
         </details>
