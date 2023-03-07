@@ -1,9 +1,11 @@
 <div class="grid place-items-start dropdown-container w-full h-auto">
-  <span class="ml-[1rem] w-[5%]">
-    {% render 'icon-hamburger' %}
-    </span>
-  <div class="grid grid-flow-col">
-    <div class="grid grid-flow-row">
+        <details id="Details-menu-drawer-container" class="menu-drawer-container">
+          <summary class="header__icon header__icon--menu header__icon--summary link focus-inset" aria-label="{{ 'sections.header.menu' | t }}">
+            <span>
+              {% render 'icon-hamburger' %}
+              {% render 'icon-close' %}
+            </span>
+          </summary>
   {% for link in section.settings.menu.links %}
     <details class="mt-[1rem] {% if forloop.index == 3 %}mb-[1rem]{% endif %}">
       <summary>{{ link.title }}
@@ -20,11 +22,6 @@
       {% endfor %}
     </details>
   {% endfor %}
-  </div>
-    <span class="w-[2rem] justify-self-end">
-    {% render 'icon-close' %}
-    </span>
-  </div>
 </div>
 
 {% stylesheet %}
