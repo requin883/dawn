@@ -5,7 +5,7 @@
       {% for childlink in link.links %}
         <details class="childlink-container">
           <summary>{{ childlink.title }}</summary>
-          <ul class="grandchildcontainer-container">
+          <ul class="grandchildlink-container">
             {% for grandchildlink in childlink.links %}
               <li>{{ grandchildlink.title }}</li>
             {% endfor %}
@@ -19,6 +19,12 @@
 {% stylesheet %}
   ul {
     list-style: none;
+  }
+  .childlink-container{
+    padding-left:1rem;
+  }
+  .grandchildlink-container{
+    padding-left:1rem;
   }
 {% endstylesheet %}
 {% schema %}
