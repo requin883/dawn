@@ -1,4 +1,4 @@
-<div class="grid">
+<div class="grid place-items-center">
   {% for link in section.settings.menu.links %}
     <details>
       <summary>{{ link.title }}</summary>
@@ -15,6 +15,12 @@
     </details>
   {% endfor %}
 </div>
+
+{% stylesheet %}
+  li {
+    list-style: none;
+  }
+{% endstylesheet %}
 {% schema %}
 {
   "name": "nav-bar",
