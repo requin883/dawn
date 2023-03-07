@@ -6,9 +6,15 @@
         "padding_top": 28,
         "padding_bottom": 28
       }
+    },
+    "navbar": {
+      "type": "nav-bar",
+      "settings": {
+      }
     }
   },
   "order": [
-    "main"
+    "main",
+    "navbar"
   ]
 }
