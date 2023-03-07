@@ -2,6 +2,7 @@
   <span class="ml-[1rem] w-[5%]">
     {% render 'icon-hamburger' %}
     </span>
+  <div>
   {% for link in section.settings.menu.links %}
     <details class="mt-[1rem] {% if forloop.index == 3 %}mb-[1rem]{% endif %}">
       <summary>{{ link.title }}
@@ -21,6 +22,10 @@
       {% endfor %}
     </details>
   {% endfor %}
+      <span class="ml-[1rem] w-[5%]">
+    {% render 'icon-close' %}
+    </span>
+  </div>
 </div>
 
 {% stylesheet %}
