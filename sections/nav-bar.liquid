@@ -54,12 +54,12 @@
 {% javascript %}
   const hamburgerMenu = document.getElementsByClassName('hamburger-menu');
   console.log(hamburgerMenu);
-  const hamburgerMenuQuery = document.querySelector('.hamguger-menu');
+  const hamburgerMenuQuery = document.querySelector('.hamburger-menu');
   console.log(hamburgerMenuQuery);
   const iconHamburgerBtn = document.getElementsByClassName('icon-hamburger-2');
   const iconCloseBtn = document.getElementsByClassName('icon-close-2');
 
-  hamburgerMenu.addEventListener('toggle', (e) => {
+  hamburgerMenuQuery.addEventListener('toggle', (e) => {
     iconHamburgerBtn.style.display = 'none';
     iconCloseBtn.style.display = 'block';
   });
