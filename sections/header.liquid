@@ -53,14 +53,13 @@
       display: none !important;
     }
     .hamburger-menu {
-      width: 100%;
+      width: 100% !important;
       display: grid !important;
       grid-auto-flow: column !important;
       place-items: center !important;
     }
   }
 {% endstylesheet %}
-
 {% javascript %}
   const dropdownMenu = document.querySelector('.dropdown-container');
   const hamburgerMenu = document.getElementsByClassName('hamburger-menu');
