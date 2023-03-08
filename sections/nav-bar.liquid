@@ -34,9 +34,9 @@
   }
 {% endstylesheet %}
 {% javascript %}
-  const hamburgerMenu = document.getElementByClassName('hamburger-menu')
-  const iconHamburgerBtn = document.getElementByClassName('icon-hamburger-2')
-  const iconCloseBtn = document.getElementByClassName('icon-close-2')
+  const hamburgerMenu = document.getElementsByClassName('hamburger-menu')
+  const iconHamburgerBtn = document.getElementsByClassName('icon-hamburger-2')
+  const iconCloseBtn = document.getElementsByClassName('icon-close-2')
   
   hamburgerMenu.addEventListener('toggle',(e)=>{
     iconHamburgerBtn.style.display='none';
