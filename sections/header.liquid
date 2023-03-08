@@ -12,7 +12,7 @@
     <div class="md:grid md:grid-flow-col md:place-items-center md:gap-20 ">
     {% for link in section.settings.menu.links %}
       <details class="mt-[1rem] md:mt-0 {% if forloop.index == 3 %}mb-[1rem] md:mb-0{% endif %}">
-        <summary class="md:hover:decoration-solid md:hover:decoration-2 md:hover:decoration-blue-600">{{ link.title }}</summary>
+        <summary class="md:hover:underline md:hover:decoration-2 md:hover:decoration-blue-600">{{ link.title }}</summary>
         {% for childlink in link.links %}
           <details class="childlink-container">
             <summary>{{ childlink.title }}</summary>
