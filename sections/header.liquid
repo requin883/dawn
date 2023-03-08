@@ -59,41 +59,7 @@
   }
   }
 {% endstylesheet %}
-{% javascript %}
-  const dropdownMenu = document.querySelector('.dropdown-container');
-  const hamburgerMenu = document.getElementsByClassName('hamburger-menu');
-  const hamburgerMenuQuery = document.querySelector('.hamburger-menu');
-  const iconHamburgerBtn = document.getElementsByClassName('icon-hamburger-2');
-  const iconCloseBtn = document.getElementsByClassName('icon-close-2');
-  const underlinedContainer1 = document.querySelector('.underlined-container-1');
-  const underlinedContainer2 = document.querySelector('.underlined-container-2');
-  const underlinedContainer3 = document.querySelector('.underlined-container-3');
-  const underlinedSummary1 = document.querySelector('.underlined-summary-1');
-  const underlinedSummary2 = document.querySelector('.underlined-summary-2');
-  const underlinedSummary3 = document.querySelector('.underlined-summary-3');
 
-  const setAttributes = (summary,container)=>{
-      summary.addEventListener('mouseover',()=>{
-        container.setAttribute('open',true)
-      })
-      summary.addEventListener('mouseout',()=>{
-        console.log("fired")
-        container.setAttribute('open',null)
-      })
-  }
-  
-  const resizeObserver = new ResizeObserver((entries) => {
-    for (const entry of entries) {
-      if (entry.contentRect.width >= 750){
-        setAttributes(underlinedSummary1,underlinedContainer1);
-        setAttributes(underlinedSummary2,underlinedContainer2);
-        setAttributes(underlinedSummary3,underlinedContainer3);
-        hamburgerMenuQuery.setAttribute('open', true);
-      }
-    }
-  })
-  resizeObserver.observe(dropdownMenu)
-{% endjavascript %}
 {% schema %}
 {
   "name": "nav-bar",
