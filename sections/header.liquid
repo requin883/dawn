@@ -9,7 +9,7 @@
         {% render 'icon-close-2' %}
       </span>
     </summary>
-    <div class="md:grid md:grid-flow-col">
+    <div class="md:grid md:grid-flow-col md:place-items-center">
     {% for link in section.settings.menu.links %}
       <details class="mt-[1rem] {% if forloop.index == 3 %}mb-[1rem]{% endif %}">
         <summary>{{ link.title }}</summary>
