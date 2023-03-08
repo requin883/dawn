@@ -17,7 +17,7 @@
             <summary>{{ childlink.title }}</summary>
             <ul class="grandchildlink-container">
               {% for grandchildlink in childlink.links %}
-                <li>{{ grandchildlink.title }}</li>
+                <a href='{{ grandchildlink.url }}'><li>{{ grandchildlink.title }}</li></a>
               {% endfor %}
             </ul>
           </details>
@@ -31,6 +31,7 @@
   ul {
     list-style: none;
   }
+  
   .dropdown-container,
   .childlink-container,
   .grandchildlink-container {
