@@ -26,39 +26,7 @@
     {% endfor %}
   </details>
 </div>
-{% stylesheet %}
-  ul {
-    list-style: none;
-  }
-  
-  .dropdown-container,
-  .childlink-container,
-  .grandchildlink-container {
-    margin-left: 1rem;
-  }
-  .hamburger-menu[open] .icon-hamburger-2 {
-    display: none;
-  }
-  .hamburger-menu .icon-hamburger-2 {
-    display: block;
-  }
-  .hamburger-menu[open] .icon-close-2 {
-    display: block;
-  }
-  .hamburger-menu .icon-close-2 {
-    display: none;
-  }
-  @media screen and (min-width: 750px) {
-    .icon-container{
-      display: none !important;
-    }
-    .hamburger-menu {
-      display: grid !important;
-      grid-auto-flow: column !important;
-      place-items: center !important;
-    }
-  }
-{% endstylesheet %}
+
 
 {% javascript %}
   const dropdownMenu = document.querySelector('.dropdown-container');
