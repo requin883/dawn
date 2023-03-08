@@ -17,7 +17,7 @@
             <summary>{{ childlink.title }}</summary>
             <ul class="grandchildlink-container">
               {% for grandchildlink in childlink.links %}
-                <li>{{ grandchildlink.title }}</li>
+                <a>{{ grandchildlink.url }}<li>{{ grandchildlink.title }}</li></a>
               {% endfor %}
             </ul>
           </details>
