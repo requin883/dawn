@@ -11,10 +11,10 @@
     </summary>
     <div class="md:grid md:grid-flow-col md:place-items-center md:gap-20 ">
     {% for link in section.settings.menu.links %}
-      <details class="mt-[1rem] md:mt-0 underlined-container underlined-container-{{ forloop.index }} {% if forloop.index == 3 %}mb-[1rem] md:mb-0{% endif %}">
+      <details class="mt-[1rem] md:relative md:mt-0 underlined-container underlined-container-{{ forloop.index }} {% if forloop.index == 3 %}mb-[1rem] md:mb-0{% endif %}">
         <summary class="md:hover:underline underlined-summary underlined-summary-{{ forloop.index }} md:hover:decoration-4 md:hover:underline-offset-[2rem] md:hover:decoration-blue-600">{{ link.title }}</summary>
         {% for childlink in link.links %}
-          <details class="childlink-container second-container-{{ forloop.index }}">
+          <details class="childlink-container md:absolute md:w-screen md:left-0 md:top-[2rem] second-container-{{ forloop.index }}">
             <summary>{{ childlink.title }}</summary>
             <ul class="grandchildlink-container">
               {% for grandchildlink in childlink.links %}
