@@ -28,7 +28,37 @@
     </div>
   </details>
 </div>
-
+{% stylesheet %}
+  ul {
+    list-style: none;
+  }
+  
+  .dropdown-container,
+  .childlink-container,
+  .grandchildlink-container {
+    margin-left: 1rem;
+  }
+  .hamburger-menu[open] .icon-hamburger-2 {
+    display: none;
+  }
+  .hamburger-menu .icon-hamburger-2 {
+    display: block;
+  }
+  .hamburger-menu[open] .icon-close-2 {
+    display: block;
+  }
+  .hamburger-menu .icon-close-2 {
+    display: none;
+  }
+  @media screen and (min-width: 750px) {
+    .icon-container{
+      display: none !important;
+    }
+  .underlined-container[open] .underlined-summary{
+    text-decoration-line: none;
+  }
+  }
+{% endstylesheet %}
 {% javascript %}
   const dropdownMenu = document.querySelector('.dropdown-container');
   const hamburgerMenu = document.getElementsByClassName('hamburger-menu');
