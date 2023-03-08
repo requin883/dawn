@@ -84,10 +84,10 @@
   const resizeObserver = new ResizeObserver((entries) => {
     for (const entry of entries) {
       if (entry.contentRect.width >= 750){
+        hamburgerMenuQuery.setAttribute('open', true);
         setAttributes(underlinedSummary1,underlinedContainer1);
         setAttributes(underlinedSummary2,underlinedContainer2);
         setAttributes(underlinedSummary3,underlinedContainer3);
-        hamburgerMenuQuery.setAttribute('open', true);
       }
     }
   })
