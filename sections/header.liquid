@@ -69,7 +69,11 @@
   const iconCloseBtn = document.getElementsByClassName('icon-close-2');
   const resizeObserver = new ResizeObserver((entries) => {
     for (const entry of entries) {
-      console.log(entry.contentRect.width)
+      if (entry.contentRect.width >= 750){
+        console.log("true")
+      }else{
+        console.log("false")
+      }
     }
   })
   resizeObserver.observe(dropdownMenu)
