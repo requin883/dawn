@@ -70,6 +70,7 @@
   const resizeObserver = new ResizeObserver((entries) => {
     for (const entry of entries) {
       if (entry.contentRect.width >= 750){
+        console.log("hello")
         hamburgerMenuQuery.style.display = "grid";
         hamburgerMenuQuery.style.gridAutoFlow = "column";
         hamburgerMenuQuery.style.placeItems = "center";
