@@ -61,17 +61,17 @@
   }
 {% endstylesheet %}
 {% javascript %}
+  const dropdownMenu = document.querySelector('.dropdown-container');
   const hamburgerMenu = document.getElementsByClassName('hamburger-menu');
-  console.log(hamburgerMenu);
   const hamburgerMenuQuery = document.querySelector('.hamburger-menu');
-  console.log(hamburgerMenuQuery);
   const iconHamburgerBtn = document.getElementsByClassName('icon-hamburger-2');
   const iconCloseBtn = document.getElementsByClassName('icon-close-2');
-
-  hamburgerMenuQuery.addEventListener('toggle', (e) => {
-    iconHamburgerBtn.style.display = 'none';
-    iconCloseBtn.style.display = 'block';
-  });
+  const resizeObserver = new ResizeObserver((entries) => {
+    for (const entry of entries) {
+      console.log(entry)
+    }
+  }
+  resizeObserver.observe(dropdownMenu)
 {% endjavascript %}
 {% schema %}
 {
