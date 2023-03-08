@@ -11,7 +11,7 @@
     </summary>
     <div class="md:grid md:grid-flow-col md:place-items-center md:gap-20 ">
     {% for link in section.settings.menu.links %}
-      <details class="mt-[1rem] md:mt-0 underlined-container {% if forloop.index == 3 %}mb-[1rem] md:mb-0{% endif %}">
+      <details class="mt-[1rem] md:mt-0 underlined-container-{{ forloop.index }} {% if forloop.index == 3 %}mb-[1rem] md:mb-0{% endif %}">
         <summary class="md:hover:underline underlined-summary-{{ forloop.index }} md:hover:decoration-4 md:hover:underline-offset-[2rem] md:hover:decoration-blue-600">{{ link.title }}</summary>
         {% for childlink in link.links %}
           <details class="childlink-container">
@@ -65,21 +65,28 @@
   const hamburgerMenuQuery = document.querySelector('.hamburger-menu');
   const iconHamburgerBtn = document.getElementsByClassName('icon-hamburger-2');
   const iconCloseBtn = document.getElementsByClassName('icon-close-2');
-  const underlinedContainer = document.querySelectorAll('.underlined-container');
+  const underlinedContainer1 = document.querySelectorAll('.underlined-container-1');
+  const underlinedContainer2 = document.querySelectorAll('.underlined-container-2');
+  const underlinedContainer3 = document.querySelectorAll('.underlined-container-3');
   const underlinedSummary1 = document.querySelectorAll('.underlined-summary-1');
   const underlinedSummary2 = document.querySelectorAll('.underlined-summary-2');
   const underlinedSummary3 = document.querySelectorAll('.underlined-summary-3');
+
+  const setAttributes = (summary,container)=>{
+      summary.addEventListener('mouseover',()=>{
+        container.setAttribute('open',true)
+      })
+      summary.addEventListener('mouseout',()=>{
+        container.setAttribute('open',null)
+      })
+  }
+  
   const resizeObserver = new ResizeObserver((entries) => {
     for (const entry of entries) {
       if (entry.contentRect.width >= 750){
-        underlinedSummary.forEach(summary=>{
-          underlinedSummary.addEventListener('mouseover',()=>{
-          underlinedContainer.setAttribute('open',true)
-        })
-        underlinedSummary.addEventListener('mouseout',()=>{
-          underlinedContainer.setAttribute('open',null)
-        })
-        })
+        setAttributes(underlinedSummary1,underlinedContainer1);
+        setAttributes(underlinedSummary2,underlinedContainer2);
+        setAttributes(underlinedSummary3,underlinedContainer3);
         hamburgerMenuQuery.setAttribute('open', true);
       }
     }
