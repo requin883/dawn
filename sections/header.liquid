@@ -61,23 +61,7 @@
     }
   }
 {% endstylesheet %}
-{% javascript %}
-  const dropdownMenu = document.querySelector('.dropdown-container');
-  const hamburgerMenu = document.getElementsByClassName('hamburger-menu');
-  const hamburgerMenuQuery = document.querySelector('.hamburger-menu');
-  const iconHamburgerBtn = document.getElementsByClassName('icon-hamburger-2');
-  const iconCloseBtn = document.getElementsByClassName('icon-close-2');
-  const resizeObserver = new ResizeObserver((entries) => {
-    for (const entry of entries) {
-      if (entry.contentRect.width >= 750){
-        console.log("true")
-      }else{
-        console.log("false")
-      }
-    }
-  })
-  resizeObserver.observe(dropdownMenu)
-{% endjavascript %}
+
 {% schema %}
 {
   "name": "nav-bar",
