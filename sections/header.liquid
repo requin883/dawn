@@ -11,7 +11,7 @@
     </summary>
     <div class="md:grid md:grid-flow-col md:place-items-center md:gap-2">
     {% for link in section.settings.menu.links %}
-      <details class="mt-[1rem] {% if forloop.index == 3 %}mb-[1rem]{% endif %}">
+      <details class="mt-[1rem] {% if forloop.index == 3 %}mb-[1rem] md:mb-0{% endif %}">
         <summary>{{ link.title }}</summary>
         {% for childlink in link.links %}
           <details class="childlink-container">
