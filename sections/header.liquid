@@ -4,7 +4,7 @@
       class="header__icon header__icon--menu header__icon--summary link focus-inset"
       aria-label="{{ 'sections.header.menu' | t }}"
     >
-      <span class="w-[30%]">
+      <span class="w-[30%] icon-container">
         {% render 'icon-hamburger-2' %}
         {% render 'icon-close-2' %}
       </span>
@@ -50,8 +50,7 @@
     display: none;
   }
   @media screen and (min-width: 750px) {
-    .icon-close-2,
-    .icon-hamburger-2 {
+    .icon-container{
       display: none;
     }
     .hamburger-menu {
@@ -67,13 +66,12 @@
   const hamburgerMenuQuery = document.querySelector('.hamburger-menu');
   const iconHamburgerBtn = document.getElementsByClassName('icon-hamburger-2');
   const iconCloseBtn = document.getElementsByClassName('icon-close-2');
-  const summaryIconContainer = document.querySelector('.header__icon--summary');
+
   const resizeObserver = new ResizeObserver((entries) => {
     for (const entry of entries) {
       if (entry.contentRect.width >= 750){
         console.log("hello")
         hamburgerMenuQuery.setAttribute('open', true);
-        summaryIconContainer.style.display=none;
       }
     }
   })
