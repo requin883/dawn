@@ -75,7 +75,7 @@
   const setAttributes = (summary,container)=>{
       summary.addEventListener('mouseover',()=>{
         container.setAttribute('open',true)
-        console.log(container.lastElement);
+        console.log(container.lastChild);
       })
       summary.addEventListener('mouseout',()=>{
         container.removeAttribute("open")
