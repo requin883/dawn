@@ -39,6 +39,17 @@
   .icon-close-2 {
     display: none;
   }
+  @media screen and (min-width: 750px) {
+    .icon-close-2,
+    .icon-hamburger-2 {
+      display: none;
+    }
+    .hamburger-menu {
+      display: grid;
+      grid-auto-flow: column;
+      place-items: center;
+    }
+  }
 {% endstylesheet %}
 {% javascript %}
   const hamburgerMenu = document.getElementsByClassName('hamburger-menu');
