@@ -10,7 +10,7 @@
       </span>
     </summary>
     {% for link in section.settings.menu.links %}
-      <details class="mt-[1rem] {% if forloop.index == 3 %}mb-[1rem]{% endif %}">
+      <details class="mt-[1rem] {% if forloop.index == 3 %}mb-[1rem]{% endif %} first-row">
         <summary>{{ link.title }}</summary>
         {% for childlink in link.links %}
           <details class="childlink-container">
@@ -36,7 +36,16 @@
   .grandchildlink-container {
     margin-left: 1rem;
   }
-  .icon-close-2 {
+  .hamburger-menu[open] > .icon-hamburger-2 {
+    display: none;
+  }
+  .hamburger-menu > .icon-hamburger-2 {
+    display: block;
+  }
+  .hamburger-menu[open] > .icon-close-2 {
+    display: block;
+  }
+  .hamburger-menu > .icon-close-2 {
     display: none;
   }
   @media screen and (min-width: 750px) {
