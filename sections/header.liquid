@@ -74,10 +74,12 @@
 
   const setAttributes = (summary,container)=>{
       summary.addEventListener('mouseover',()=>{
-        container.setAttribute('open',true)
+        container.setAttribute('open',true);
+        container.children[1].setAttribute('open',true);
       })
       summary.addEventListener('mouseout',()=>{
-        container.removeAttribute("open")
+        container.removeAttribute('open')
+        container.children[1].removeAttribute('open')
       })
     console.log(container.children[1]);
   }
