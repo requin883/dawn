@@ -1,27 +1,29 @@
 <div class="grid place-items-start dropdown-container w-full h-auto">
-        <details class="hamburger-menu">
-          <summary class="header__icon header__icon--menu header__icon--summary link focus-inset" aria-label="{{ 'sections.header.menu' | t }}">
-            <span>
-              {% render 'icon-hamburger-2' %}
-              {% render 'icon-close-2' %}
-            </span>
-          </summary>
-  {% for link in section.settings.menu.links %}
-    <details class="mt-[1rem] {% if forloop.index == 3 %}mb-[1rem]{% endif %}">
-      <summary>{{ link.title }}
+  <details class="hamburger-menu">
+    <summary
+      class="header__icon header__icon--menu header__icon--summary link focus-inset"
+      aria-label="{{ 'sections.header.menu' | t }}"
+    >
+      <span>
+        {% render 'icon-hamburger-2' %}
+        {% render 'icon-close-2' %}
+      </span>
     </summary>
-      {% for childlink in link.links %}
-        <details class="childlink-container">
-          <summary>{{ childlink.title }}</summary>
-          <ul class="grandchildlink-container">
-            {% for grandchildlink in childlink.links %}
-              <li>{{ grandchildlink.title }}</li>
-            {% endfor %}
-          </ul>
-        </details>
-      {% endfor %}
-    </details>
-  {% endfor %}
+    {% for link in section.settings.menu.links %}
+      <details class="mt-[1rem] {% if forloop.index == 3 %}mb-[1rem]{% endif %}">
+        <summary>{{ link.title }}</summary>
+        {% for childlink in link.links %}
+          <details class="childlink-container">
+            <summary>{{ childlink.title }}</summary>
+            <ul class="grandchildlink-container">
+              {% for grandchildlink in childlink.links %}
+                <li>{{ grandchildlink.title }}</li>
+              {% endfor %}
+            </ul>
+          </details>
+        {% endfor %}
+      </details>
+    {% endfor %}
   </details>
 </div>
 
@@ -29,22 +31,27 @@
   ul {
     list-style: none;
   }
-  .dropdown-container, .childlink-container, .grandchildlink-container{
-    margin-left:1rem;
+  .dropdown-container,
+  .childlink-container,
+  .grandchildlink-container {
+    margin-left: 1rem;
   }
-  .icon-close-2{
-    display:none;
+  .icon-close-2 {
+    display: none;
   }
 {% endstylesheet %}
 {% javascript %}
-  const hamburgerMenu = document.getElementsByClassName('hamburger-menu')
-  const iconHamburgerBtn = document.getElementsByClassName('icon-hamburger-2')
-  const iconCloseBtn = document.getElementsByClassName('icon-close-2')
-  
-  hamburgerMenu.addEventListener('toggle',(e)=>{
-    iconHamburgerBtn.style.display='none';
-    iconCloseBtn.style.display='block';
-  })
+  const hamburgerMenu = document.getElementsByClassName('hamburger-menu');
+  console.log(hamburgerMenu);
+  const hamburgerMenuQuery = document.querySelector('.hamguger-menu');
+  console.log(hamburgerMenuQuery);
+  const iconHamburgerBtn = document.getElementsByClassName('icon-hamburger-2');
+  const iconCloseBtn = document.getElementsByClassName('icon-close-2');
+
+  hamburgerMenu.addEventListener('toggle', (e) => {
+    iconHamburgerBtn.style.display = 'none';
+    iconCloseBtn.style.display = 'block';
+  });
 {% endjavascript %}
 {% schema %}
 {
