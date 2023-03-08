@@ -11,8 +11,8 @@
     </summary>
     <div class="md:grid md:grid-flow-col md:place-items-center md:gap-20 ">
     {% for link in section.settings.menu.links %}
-      <details class="mt-[1rem] md:mt-0 {% if forloop.index == 3 %}mb-[1rem] md:mb-0{% endif %}">
-        <summary class="md:hover:underline md:hover:decoration-4 md:hover:underline-offset-[2rem] md:hover:decoration-blue-600">{{ link.title }}</summary>
+      <details class="mt-[1rem] md:mt-0 underlined-container {% if forloop.index == 3 %}mb-[1rem] md:mb-0{% endif %}">
+        <summary class="md:hover:underline underlined-summary md:hover:decoration-4 md:hover:underline-offset-[2rem] md:hover:decoration-blue-600">{{ link.title }}</summary>
         {% for childlink in link.links %}
           <details class="childlink-container">
             <summary>{{ childlink.title }}</summary>
@@ -28,34 +28,7 @@
     </div>
   </details>
 </div>
-{% stylesheet %}
-  ul {
-    list-style: none;
-  }
-  
-  .dropdown-container,
-  .childlink-container,
-  .grandchildlink-container {
-    margin-left: 1rem;
-  }
-  .hamburger-menu[open] .icon-hamburger-2 {
-    display: none;
-  }
-  .hamburger-menu .icon-hamburger-2 {
-    display: block;
-  }
-  .hamburger-menu[open] .icon-close-2 {
-    display: block;
-  }
-  .hamburger-menu .icon-close-2 {
-    display: none;
-  }
-  @media screen and (min-width: 750px) {
-    .icon-container{
-      display: none !important;
-    }
-  }
-{% endstylesheet %}
+
 {% javascript %}
   const dropdownMenu = document.querySelector('.dropdown-container');
   const hamburgerMenu = document.getElementsByClassName('hamburger-menu');
